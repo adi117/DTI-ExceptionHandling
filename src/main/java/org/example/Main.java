@@ -13,10 +13,29 @@ public class Main {
 //        System.out.println(CalculateAverage.calculateAverage(numberList));
 
 
-        Scanner scannerProductData = new Scanner(new File("/Users/muhammadadiwicaksono/Downloads/product_sales_data.csv")).useDelimiter(",");
-        while (scannerProductData.hasNext()){
-            System.out.print(scannerProductData.next() + ",");
+        try {
+            Scanner scannerProductData = new Scanner(new File("/Users/muhammadadiwicaksono/Downloads/product_sales_data.csv")).useDelimiter(",");
+
+            while (scannerProductData.hasNext()){
+                String row = scannerProductData.nextLine();
+                String[] rowArray = row.split(",");
+
+                int limiter = 0;
+
+                for (String rowValue : rowArray){
+                    limiter++;
+                    System.out.print(rowValue + " | ");
+                    if (limiter == 3){
+                        System.out.println();
+                    }
+                }
+            }
+            scannerProductData.close();
+
+        } catch (FileNotFoundException e){
+            System.out.println("Input the correct file path!");
         }
-        scannerProductData.close();
+
+
     }
 }
