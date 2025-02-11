@@ -20,7 +20,7 @@ public class CalculateProductData {
         checkMostSoldProduct(productName, itemSold);
     }
 
-    public static int getItemSoldList(){
+    public static int getTotalProductSold(){
         int sumSoldProduct = 0;
 
         for (int quantity : itemSoldList){
@@ -39,7 +39,7 @@ public class CalculateProductData {
         return Math.round(totalSales*100.0)/100;
     }
 
-    public static String[] checkMostSoldProduct(String productName, int itemSold){
+    private static String[] checkMostSoldProduct(String productName, int itemSold){
         if (mostSoldProduct[0] == null){
             mostSoldProduct[0] =productName;
             mostSoldProduct[1] = String.valueOf(itemSold);
@@ -53,7 +53,7 @@ public class CalculateProductData {
         return mostSoldProduct;
     }
 
-    public static String[] checkLeastSoldProduct(String productName, int itemSold){
+    private static String[] checkLeastSoldProduct(String productName, int itemSold){
         if (leastSoldProduct[0] == null){
             leastSoldProduct[0] =productName;
             leastSoldProduct[1] = String.valueOf(itemSold);

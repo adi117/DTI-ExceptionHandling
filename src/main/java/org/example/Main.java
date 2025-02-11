@@ -45,7 +45,7 @@ public class Main {
                         }
                     }
 
-                    ProductData productData = new ProductData(productName, totalSold, itemPrice);
+                    CalculateProductData.addProductInformationList(productName, totalSold, itemPrice);
 
                 }
             }
@@ -56,7 +56,7 @@ public class Main {
         }
 
         System.out.println("Total sales : " + CalculateProductData.getTotalSales());
-        System.out.println("Total product sold : " + CalculateProductData.getItemSoldList());
+        System.out.println("Total product sold : " + CalculateProductData.getTotalProductSold());
         System.out.println("Most bought product : " + CalculateProductData.getMostSoldProduct());
         System.out.println("Least bought product : " + CalculateProductData.getLeastSoldProduct());
 
