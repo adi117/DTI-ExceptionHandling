@@ -67,11 +67,11 @@ public class CalculateProductData {
         return leastSoldProduct;
     }
 
-    public static void getMostSoldProduct(){
-        System.out.println(mostSoldProduct[0]);
+    public static String getMostSoldProduct(){
+        return mostSoldProduct[0];
     }
 
-    public static void getLeastSoldProduct(){
-        System.out.println(leastSoldProduct[0]);
+    public static String getLeastSoldProduct(){
+        return leastSoldProduct[0];
     }
 }

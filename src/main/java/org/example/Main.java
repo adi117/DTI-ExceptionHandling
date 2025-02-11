@@ -55,10 +55,10 @@ public class Main {
             System.out.println("Input the correct file path!");
         }
 
-        System.out.println(CalculateProductData.getItemSoldList());
-        System.out.println(CalculateProductData.getTotalSales());
-        CalculateProductData.getLeastSoldProduct();
-        CalculateProductData.getMostSoldProduct();
+        System.out.println("Total sales : " + CalculateProductData.getTotalSales());
+        System.out.println("Total product sold : " + CalculateProductData.getItemSoldList());
+        System.out.println("Most bought product : " + CalculateProductData.getMostSoldProduct());
+        System.out.println("Least bought product : " + CalculateProductData.getLeastSoldProduct());
 
 
     }
