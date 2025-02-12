@@ -5,13 +5,13 @@ import java.util.List;
 
 public class CalculateProductData {
     private static List<String> productList = new ArrayList<>();
-    private static List<Integer> itemSoldList = new ArrayList<>();
+    private static List<Double> itemSoldList = new ArrayList<>();
     private static List<Double> itemPriceList = new ArrayList<>();
     private static String[] mostSoldProduct = new String[2];
     private static String[] leastSoldProduct = new String[2];
 
 
-    public static void addProductInformationList(String productName, int itemSold, double itemPrice){
+    public static void addProductInformationList(String productName, double itemSold, double itemPrice){
         productList.add(productName);
         itemPriceList.add(itemPrice);
         itemSoldList.add(itemSold);
@@ -20,10 +20,10 @@ public class CalculateProductData {
         checkMostSoldProduct(productName, itemSold);
     }
 
-    public static int getTotalProductSold(){
-        int sumSoldProduct = 0;
+    public static double getTotalProductSold(){
+        double sumSoldProduct = 0;
 
-        for (int quantity : itemSoldList){
+        for (double quantity : itemSoldList){
             sumSoldProduct += quantity;
         }
         return sumSoldProduct;
@@ -39,13 +39,13 @@ public class CalculateProductData {
         return Math.round(totalSales*100.0)/100;
     }
 
-    private static String[] checkMostSoldProduct(String productName, int itemSold){
+    private static String[] checkMostSoldProduct(String productName, double itemSold){
         if (mostSoldProduct[0] == null){
             mostSoldProduct[0] =productName;
             mostSoldProduct[1] = String.valueOf(itemSold);
         }
 
-        if (itemSold > Integer.parseInt(mostSoldProduct[1])){
+        if (itemSold > Double.parseDouble(mostSoldProduct[1])){
             mostSoldProduct[0] =productName;
             mostSoldProduct[1] = String.valueOf(itemSold);
         }
@@ -53,13 +53,13 @@ public class CalculateProductData {
         return mostSoldProduct;
     }
 
-    private static String[] checkLeastSoldProduct(String productName, int itemSold){
+    private static String[] checkLeastSoldProduct(String productName, double itemSold){
         if (leastSoldProduct[0] == null){
             leastSoldProduct[0] =productName;
             leastSoldProduct[1] = String.valueOf(itemSold);
         }
 
-        if (itemSold < Integer.parseInt(leastSoldProduct[1])){
+        if (itemSold < Double.parseDouble(leastSoldProduct[1])){
             leastSoldProduct[0] =productName;
             leastSoldProduct[1] = String.valueOf(itemSold);
         }

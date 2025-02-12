@@ -31,26 +31,28 @@ public class Main {
                 List<String> rowList = new ArrayList<>(List.of(rowArray));
 
                 if (rowList.size() >= 3){
-                    String productName = "";
-                    int totalSold = 0;
-                    double itemPrice = 0.0;
+                    try {
+                        String productName = "";
+                        double totalSold = 0;
+                        double itemPrice = 0.0;
 
-                    for (int i = 0; i < 3; i++){
-                        if (i == 0){
-                            productName = rowList.get(i);
-                        } else if (i == 1){
-                            totalSold = Integer.parseInt(rowList.get(i));
-                        } else {
-                            itemPrice = Double.parseDouble(rowList.get(i));
+                        for (int i = 0; i < 3; i++){
+                            if (i == 0){
+                                productName = rowList.get(i);
+                            } else if (i == 1){
+                                totalSold = Double.parseDouble(rowList.get(i));
+                            } else {
+                                itemPrice = Double.parseDouble(rowList.get(i));
+                            }
                         }
+
+                        CalculateProductData.addProductInformationList(productName, totalSold, itemPrice);
+                    } catch (NumberFormatException e){
+                        System.out.println("Error! The value is not a number.");
                     }
-
-                    CalculateProductData.addProductInformationList(productName, totalSold, itemPrice);
-
                 }
             }
             scannerProductData.close();
-
         } catch (FileNotFoundException e){
             System.out.println("Input the correct file path!");
         }
